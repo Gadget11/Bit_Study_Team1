@@ -1,0 +1,46 @@
+package Study;
+
+import java.util.Scanner;
+
+public class study0617 {
+
+	public static void main(String[] args) {
+
+		// 문제] 1부터 10,000까지 8이라는 숫자는 총 몇번 나오는가?
+		// 8이 포함되어 있는 갯수 카운팅이 아니라 8이라는 숫자를 모두 카운팅.
+
+		int count = 0;
+
+		for (int i = 1; i <= 10000; i++) { // 1 ~ 10000 반복문
+
+			String iString = Integer.toString(i); // String으로 형변환
+
+			for (int j = 0; j < iString.length(); j++) { // j번째 수자리 String 비교
+
+				// System.out.println(iString.charAt(j));
+
+				if (iString.charAt(j) == '8') { // j번째 수자리가 8이면 카운트
+					count++;
+				}
+			}
+
+		}
+
+		System.out.println(count); // 출력
+
+		// 문제2] 알파벳 소문자, 대문자, 숫자 0-9중 하나가 주어졌을 때,
+		// 주어진 글자의 아스키 코드값을 출력하는 프로그램을 작성하시오.
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("문자 입력 : ");
+
+		char ch = sc.next().charAt(0); // char 입력받기위해 charAt() 사용
+
+		System.out.println(ch + "의 아스키 코드값은 " + (int) ch + " 입니다.");
+		
+		// char형을(int)로 형변환
+
+	}
+
+}
