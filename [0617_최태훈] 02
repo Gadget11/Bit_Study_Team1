@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class realstudy06172 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("알파벳 소,대문자로이루워진 길이 100이하의 문자를 입력하세요");
+		String k = sc.next();
+		char arr[] = new char[100];
+		arr[0] = 's';
+		int j = k.length();
+
+		for (int w = 1; w < j; w++) {
+			arr[w] = k.charAt(w);
+		}
+		for (int w = 1; w < j; w++) {
+			if (w % 10 != 0) {
+				System.out.print(arr[w]);
+			} else if (w % 10 == 0) {
+				System.out.print(arr[w]);
+				System.out.println();
+			}
+		}
+		// 알파벳 소문자와 대문자로만 이루어진 길이가 N인 단어가 주어진다.
+		// 한 줄에 10글자씩 끊어서 출력하는 프로그램을 작성하시오.
+
+	}
+
+}
