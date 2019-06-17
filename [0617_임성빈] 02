@@ -1,0 +1,61 @@
+package Study;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class StudyHW0617_02 {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		//[문제2] 세 개의 자연수 A, B, C가 주어질 때 A×B×C를 계산한 결과에
+		//0부터 9까지 각각의 숫자가 몇 번씩 쓰였는지를 구하는 프로그램을 작성하시오.
+		//예를 들어 A = 150, B = 266, C = 427 이라면 
+		//A × B × C = 150 × 266 × 427 = 17037300 이 되고, 
+		//계산한 결과 17037300 에는 0이 3번, 1이 1번, 3이 2번, 7이 2번 쓰였다.
+		//https://www.acmicpc.net/problem/2577
+		
+		int a, b, c;
+		String mul; //a*b*c의 결과를 저장할 String
+		String[] mulDigit; //자릿수 나누기용 String 배열
+		int[] count = new int[10]; //0~9번까지 숫자 사용횟수 카운트
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		System.out.println("자연수 A를 입력하세요.");
+		a = Integer.parseInt(br.readLine()); //2자리 이상 읽을때는 Line 후 변환필요
+		
+		System.out.println("자연수 B를 입력하세요.");
+		b = Integer.parseInt(br.readLine());
+		
+		System.out.println("자연수 C를 입력하세요.");
+		c = Integer.parseInt(br.readLine());
+		
+		mul = Integer.toString(a*b*c); //숫자를 String으로 변환
+		mulDigit = mul.split(""); //mul을 글자별로 잘라서 mulDigit에 저장
+		
+		System.out.println("\n"+mul); //비교용 숫자배열 출력
+		
+		for (int i=0; i<mulDigit.length; i++) { //자릿수 체크
+			switch (mulDigit[i]){
+			case "0": count[0]++; break;
+			case "1": count[1]++; break;
+			case "2": count[2]++; break;
+			case "3": count[3]++; break;
+			case "4": count[4]++; break;
+			case "5": count[5]++; break;
+			case "6": count[6]++; break;
+			case "7": count[7]++; break;
+			case "8": count[8]++; break;
+			case "9": count[9]++; break;
+			}
+		}
+		
+		for (int i=0; i<=9; i++) { //출력
+			System.out.println(i + "은 " + count[i] + "번 쓰였습니다.");
+		}
+
+		
+		
+	}
+
+}
